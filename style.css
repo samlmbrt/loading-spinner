@@ -1,0 +1,91 @@
+:root {
+  --fg-color: rebeccapurple;
+  --bg-color: white;
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+.spinner-container {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  animation: spinner-container-rotation 1.5s linear infinite;
+  transform-origin: 25px 25px;
+}
+
+.spinner {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 6px solid var(--fg-color);
+  border-radius: 50%;
+}
+
+.masking-box-1 {
+  position: absolute;
+  background-color: var(--bg-color);
+  width: 100px;
+  height: 50px;
+  top: -25px;
+  left: -25px;
+  transform-origin: 50px 50px;
+  animation: masking-box-1-rotation 2.5s ease infinite;
+}
+
+.masking-box-2 {
+  position: absolute;
+  background-color: var(--bg-color);
+  width: 100px;
+  height: 50px;
+  top: 25px;
+  left: -25px;
+  transform-origin: 50px 0;
+  animation: masking-box-2-rotation 2.5s 0.8s ease infinite;
+}
+
+@keyframes spinner-container-rotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes masking-box-1-rotation {
+  0% {
+    transform: rotate(0);
+  }
+
+  25%,
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75%,
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes masking-box-2-rotation {
+  0% {
+    transform: rotate(0);
+  }
+
+  25%,
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75%,
+  100% {
+    transform: rotate(360deg);
+  }
+}
